@@ -1,0 +1,60 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31613.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.Dapper", "src\DapperPerfTest.Dapper\DapperPerfTest.Dapper.csproj", "{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.EFCore", "src\DapperPerfTest.EFCore\DapperPerfTest.EFCore.csproj", "{31198674-4A18-4E34-AD47-E2A638E09098}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.PerfTest", "src\DapperPerfTest.PerfTest\DapperPerfTest.PerfTest.csproj", "{4527F970-4D51-4002-BBED-A0A1B61DBC22}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D93AD60C-9C2F-4C4E-87D6-1BE83D8FC4FA}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		src\AssemblyInfo.cs = src\AssemblyInfo.cs
+		Directory.Build.props = Directory.Build.props
+		global.json = global.json
+		src\stylecop.json = src\stylecop.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.Common", "src\DapperPerfTest.Common\DapperPerfTest.Common.csproj", "{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DapperPerfTest.Report", "src\DapperPerfTest.Report\DapperPerfTest.Report.fsproj", "{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31198674-4A18-4E34-AD47-E2A638E09098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31198674-4A18-4E34-AD47-E2A638E09098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31198674-4A18-4E34-AD47-E2A638E09098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31198674-4A18-4E34-AD47-E2A638E09098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4527F970-4D51-4002-BBED-A0A1B61DBC22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4527F970-4D51-4002-BBED-A0A1B61DBC22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4527F970-4D51-4002-BBED-A0A1B61DBC22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4527F970-4D51-4002-BBED-A0A1B61DBC22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9439FFC-33EF-4901-B8E2-3F9D45AB1BC8}
+	EndGlobalSection
+EndGlobal

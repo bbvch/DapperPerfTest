@@ -1,0 +1,75 @@
+root = true
+
+[*]
+charset = utf-8
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
+end_of_line = crlf
+
+[*.sln]
+indent_style = tab
+
+[*.sh]
+end_of_line = lf
+
+[*.{csproj,json,md,props,proto,txt,wxs,xml,yaml,yml}]
+indent_size = 2
+insert_final_newline = false
+
+[*.{DotSettings,yaml,yml}]
+end_of_line = lf
+
+[*.cs]
+charset = utf-8-bom
+csharp_using_directive_placement = outside_namespace:warning
+csharp_prefer_simple_default_expression = true:warning
+
+dotnet_analyzer_diagnostic.category-Style.severity = warning
+dotnet_code_quality.api_surface = public, internal, private
+dotnet_code_quality.CA1002.api_surface = public
+
+dotnet_style_qualification_for_event = true:none
+dotnet_style_qualification_for_field = true:none
+dotnet_style_qualification_for_method = true:none
+dotnet_style_qualification_for_property = true:none
+csharp_style_var_elsewhere = true:suggestion
+csharp_style_var_for_built_in_types = true:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+
+dotnet_diagnostic.CA1002.severity = suggestion
+dotnet_diagnostic.CA1008.severity = none
+dotnet_diagnostic.CA1030.severity = none
+dotnet_diagnostic.CA1032.severity = none
+dotnet_diagnostic.CA1034.severity = none
+dotnet_diagnostic.CA1062.severity = none
+dotnet_diagnostic.CA1303.severity = none
+dotnet_diagnostic.CA1305.severity = none
+dotnet_diagnostic.CA1708.severity = none
+dotnet_diagnostic.CA1716.severity = none
+dotnet_diagnostic.CA1812.severity = suggestion
+dotnet_diagnostic.CA1814.severity = suggestion
+dotnet_diagnostic.CA1819.severity = suggestion
+dotnet_diagnostic.CA1822.severity = suggestion
+dotnet_diagnostic.CA2007.severity = none
+
+dotnet_diagnostic.IDE0001.severity = warning
+dotnet_diagnostic.IDE0002.severity = warning
+dotnet_diagnostic.IDE0007.severity = suggestion
+dotnet_diagnostic.IDE0046.severity = suggestion
+dotnet_diagnostic.IDE0050.severity = none
+dotnet_diagnostic.IDE0058.severity = none
+dotnet_diagnostic.IDE0072.severity = none
+dotnet_diagnostic.IDE0130.severity = none # re-enable on next .NET SDK
+
+dotnet_diagnostic.SA0001.severity = none
+dotnet_diagnostic.SA1402.severity = none
+dotnet_diagnostic.SA1412.severity = warning
+dotnet_diagnostic.SA1413.severity = none
+dotnet_diagnostic.SA1600.severity = none
+dotnet_diagnostic.SA1601.severity = none
+dotnet_diagnostic.SA1602.severity = none
+dotnet_diagnostic.SA1611.severity = none
+dotnet_diagnostic.SA1615.severity = none
+dotnet_diagnostic.SA1618.severity = none
+dotnet_diagnostic.SA1633.severity = none
