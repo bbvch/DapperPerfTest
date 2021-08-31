@@ -9,13 +9,13 @@ Setup a (local) [Northwind DB](https://docs.microsoft.com/en-us/dotnet/framework
 ### Time to first query
 
 ```ps
-dotnet run --project .\src\DapperPerfTest.PerfTest -c Release -- --f TimeToFirstQuery
+dotnet run --project .\src\DapperPerfTest.PerfTest -c Release -- -f TimeToFirstQuery
 ```
 
 ### Query benchmarks
 
 ```ps
-dotnet run --project .\src\DapperPerfTest.PerfTest -c Release -- --join --f *.Query.*
+dotnet run --project .\src\DapperPerfTest.PerfTest -c Release -- --join -f *.Query.*
 ```
 
 #### Generate plots

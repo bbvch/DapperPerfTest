@@ -1,13 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 using Dapper;
+using DapperPerfTest.EFCore.Scaffold;
+using Microsoft.EntityFrameworkCore;
 
 namespace DapperPerfTest.PerfTest.Query
 {
     public class RelatedEntities : PerfTestBase
     {
         private const int ProductId = 75;
+
+        private readonly Func<NorthwindContext, IEnumerable<EndangeredCustomer>> compiledEfQuery =
+            EF.CompileQuery<NorthwindContext, EndangeredCustomer>(ctx =>
+                from c in ctx.Customers
+                let affectedOrders = c.Orders.SelectMany(o => o.OrderDetails.Where(_ => _.ProductId == ProductId))
+                where affectedOrders.Any()
+                select new EndangeredCustomer
+                {
+                    CustomerId = c.CustomerId,
+                    Name = c.ContactName,
+                    Phone = c.Phone,
+                    OrderIds = affectedOrders.Select(_ => _.OrderId).ToList(),
+                    TotalAmount = affectedOrders.Select(__ => __.UnitPrice * __.Quantity).Sum()
+                });
 
         [Benchmark(Baseline = true)]
         public IReadOnlyCollection<EndangeredCustomer> Dapper()
@@ -58,6 +75,13 @@ namespace DapperPerfTest.PerfTest.Query
                 };
 
             var customers = customerQuery.ToList();
+            return customers;
+        }
+
+        [Benchmark]
+        public IReadOnlyCollection<EndangeredCustomer> EfCoreCompiled()
+        {
+            var customers = this.compiledEfQuery(this.EfContext).ToList();
             return customers;
         }
 

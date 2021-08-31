@@ -49,7 +49,7 @@ let main _ =
         let font = Font(family = "Times New Roman")
         Layout(barmode = "group", legend = legend, yaxis = yAxis, font = font)
 
-    [ dataFor "Dapper" "Dapper"; dataFor "EfCore" "EF Core" ]
+    [ dataFor "Dapper" "Dapper"; dataFor "EfCore" "EF Core"; dataFor "EfCoreCompiled" "EF Core (compiled)" ]
     |> Chart.Plot
     |> Chart.WithLayout groupedLayout
     |> Chart.WithSize (768, 512)
