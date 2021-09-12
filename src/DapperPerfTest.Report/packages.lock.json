@@ -14,13 +14,14 @@
         "resolved": "5.0.2",
         "contentHash": "DpcajqENgb3VXaHw1FKfVS+TWwEzck1PCajqLwBAVrtd1lfxd7T8JISVZBdV1mX9+2g48+tIgpNaVJWObdMrBw=="
       },
-      "XPlot.Plotly": {
+      "Plotly.NET": {
         "type": "Direct",
-        "requested": "[4.0.3, )",
-        "resolved": "4.0.3",
-        "contentHash": "LJ+cShPicoWxxmfw41gmjLCJ1sO/FrK1VD5nGUWfesZVisjQmMnw+VZO4r7sOlqfFzVpR/B4XOegD4xKRyH4HQ==",
+        "requested": "[2.0.0-preview.7, )",
+        "resolved": "2.0.0-preview.7",
+        "contentHash": "pRrFHB6wl+64Riyln3CQnnbmGeABIShkSORcYR71r5BIQOD/Uy53ksHMyJKr1Q6+mTdJNbq2/K31fB6RkNJJ9w==",
         "dependencies": {
-          "FSharp.Core": "4.7.2",
+          "DynamicObj": "0.0.3",
+          "FSharp.Core": "5.0.0",
           "Newtonsoft.Json": "12.0.3"
         }
       },
@@ -60,6 +61,14 @@
         "type": "Transitive",
         "resolved": "2.0.90",
         "contentHash": "e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg=="
+      },
+      "DynamicObj": {
+        "type": "Transitive",
+        "resolved": "0.0.3",
+        "contentHash": "P1vSL2S6erqaM+8uwEM20AluKSiyBZ+45aCPpc0i/Sse+Z1+toWxp6vKzXDNgqTpvdjV3glRiYcNADggwVAYpw==",
+        "dependencies": {
+          "FSharp.Core": "5.0.0"
+        }
       },
       "Iced": {
         "type": "Transitive",
