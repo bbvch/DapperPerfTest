@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.Dapper", "src\DapperPerfTest.Dapper\DapperPerfTest.Dapper.csproj", "{CB1D3EC8-DE55-4C15-94E5-8C7FC8F1F6D6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.EFCore", "src\DapperPerfTest.EFCore\DapperPerfTest.EFCore.csproj", "{31198674-4A18-4E34-AD47-E2A638E09098}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.EFCore5", "src\DapperPerfTest.EFCore5\DapperPerfTest.EFCore5.csproj", "{31198674-4A18-4E34-AD47-E2A638E09098}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.PerfTest", "src\DapperPerfTest.PerfTest\DapperPerfTest.PerfTest.csproj", "{4527F970-4D51-4002-BBED-A0A1B61DBC22}"
 EndProject
@@ -18,11 +18,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.props = Directory.Build.props
 		global.json = global.json
 		src\stylecop.json = src\stylecop.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DapperPerfTest.Common", "src\DapperPerfTest.Common\DapperPerfTest.Common.csproj", "{ACD9C4DE-473E-4B93-AB1F-7A39974C37E2}"
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "DapperPerfTest.Report", "src\DapperPerfTest.Report\DapperPerfTest.Report.fsproj", "{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperPerfTest.EFCore6", "src\DapperPerfTest.EFCore6\DapperPerfTest.EFCore6.csproj", "{CCD9503A-A5B9-4912-8984-AADDB7EFE637}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -50,6 +53,10 @@ Global
 		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{378CFE25-DB7E-4096-BB58-D3089EA9E6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CCD9503A-A5B9-4912-8984-AADDB7EFE637}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CCD9503A-A5B9-4912-8984-AADDB7EFE637}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CCD9503A-A5B9-4912-8984-AADDB7EFE637}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CCD9503A-A5B9-4912-8984-AADDB7EFE637}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

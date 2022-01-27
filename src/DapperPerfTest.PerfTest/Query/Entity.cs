@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using BenchmarkDotNet.Attributes;
 using Dapper;
-using DapperPerfTest.EFCore.Scaffold;
 using Microsoft.EntityFrameworkCore;
 
 namespace DapperPerfTest.PerfTest.Query
@@ -9,15 +8,27 @@ namespace DapperPerfTest.PerfTest.Query
     public class Entity : PerfTestBase
     {
         [Benchmark(Baseline = true)]
-        public Product Dapper()
+        public EFCore5.Scaffold.Product Dapper()
         {
-            return this.DbConnection.QuerySingle<Product>("SELECT * FROM Products WHERE ProductId=42");
+            return this.DbConnection.QuerySingle<EFCore5.Scaffold.Product>("SELECT * FROM Products WHERE ProductId=42");
         }
 
         [Benchmark]
-        public Product EfCore()
+        public EFCore5.Scaffold.Product EFCore5()
         {
-            return this.EfContext.Products.AsNoTracking().Single(_ => _.ProductId == 42);
+            return this.EF5Context.Products.AsNoTracking().Single(_ => _.ProductId == 42);
+        }
+
+        [Benchmark]
+        public EFCore6.Scaffold.Product EFCore6()
+        {
+            return this.EF6Context.Products.AsNoTracking().Single(_ => _.ProductId == 42);
+        }
+
+        [Benchmark]
+        public EFCore6.Scaffold.Product EFCore6Compiled()
+        {
+            return this.EF6Context.Products.AsNoTracking().Single(_ => _.ProductId == 42);
         }
     }
 }

@@ -1,18 +1,12 @@
 {
   "version": 1,
   "dependencies": {
-    ".NETCoreApp,Version=v5.0": {
+    "net6.0": {
       "Dapper": {
         "type": "Direct",
-        "requested": "[2.0.90, )",
-        "resolved": "2.0.90",
-        "contentHash": "e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg=="
-      },
-      "Microsoft.CodeAnalysis.NetAnalyzers": {
-        "type": "Direct",
-        "requested": "[5.0.3, )",
-        "resolved": "5.0.3",
-        "contentHash": "7rw0JUPSAVGR0HPekQiQvwGPor44p/Ek21+wZABraG4bVYNrSkx98ZZsxSxG5jJ4oqjACJxea8E62UO0dsKDBw=="
+        "requested": "[2.0.123, )",
+        "resolved": "2.0.123",
+        "contentHash": "RDFF4rBLLmbpi6pwkY7q/M6UXHRJEOerplDGE5jwEkP/JGJnBauAClYavNKJPW1yOTWRPIyfj4is3EaJxQXILQ=="
       },
       "Microsoft.Data.SqlClient": {
         "type": "Direct",
@@ -34,17 +28,17 @@
       },
       "SonarAnalyzer.CSharp": {
         "type": "Direct",
-        "requested": "[8.28.0.36354, )",
-        "resolved": "8.28.0.36354",
-        "contentHash": "8tlekGMg4z/pjNoEuiy69hnCO62fGRs53rPMdv3HpjpvTVme47ZxPc3wIinkbgea+9c9GLMw2q9zoIGXOCgHmQ=="
+        "requested": "[8.34.0.42011, )",
+        "resolved": "8.34.0.42011",
+        "contentHash": "OSWlrOapKdaFrzJPe7zPG5yXcL50n5kkcu3TmDTOvQnGWA5mJgvEOt/tR8qWo6xsTuL02MQvXvGo1oNE6A2n4g=="
       },
       "StyleCop.Analyzers": {
         "type": "Direct",
-        "requested": "[1.2.0-beta.354, )",
-        "resolved": "1.2.0-beta.354",
-        "contentHash": "oDSJNxnEvIzAQTkpkc/FnJP4dQ7TV6fHMsI+2ckU5DOaMiwiEfh1fawMsSqz2bCoNwbTt9lS6MgYvyVKujNJoA==",
+        "requested": "[1.2.0-beta.376, )",
+        "resolved": "1.2.0-beta.376",
+        "contentHash": "uaaVoOYWfIMoWtZsNJwV0m/GI3XAi8BA71e9iBOFDPo3TtAmcGkZ2qcxItkWb6eKI90urOPmxc35BnuhluC1IA==",
         "dependencies": {
-          "StyleCop.Analyzers.Unstable": "1.2.0.354"
+          "StyleCop.Analyzers.Unstable": "1.2.0.376"
         }
       },
       "Microsoft.CSharp": {
@@ -443,8 +437,8 @@
       },
       "StyleCop.Analyzers.Unstable": {
         "type": "Transitive",
-        "resolved": "1.2.0.354",
-        "contentHash": "/3RlM31XbJ02gaWh7dVumWOyMvGHswb/zygGJXd9oEJMRyyYc/HFJlAC5gBPxvi9cB4CMvIyyUTmZz5VLKwTvg=="
+        "resolved": "1.2.0.376",
+        "contentHash": "a009jDRd7zP6h+jenZ7nGjqkkFkEuxmT9FeM334cLDwodfU2x/nNcsFqw2Pjd4wVPiyX+qjLq+vhhbE3OPzFMw=="
       },
       "System.Collections": {
         "type": "Transitive",
@@ -1217,7 +1211,7 @@
         }
       }
     },
-    ".NETCoreApp,Version=v5.0/linux-x64": {
+    "net6.0/linux-x64": {
       "Microsoft.Data.SqlClient": {
         "type": "Direct",
         "requested": "[2.0.1, )",
@@ -1857,7 +1851,7 @@
         }
       }
     },
-    ".NETCoreApp,Version=v5.0/osx-x64": {
+    "net6.0/osx-x64": {
       "Microsoft.Data.SqlClient": {
         "type": "Direct",
         "requested": "[2.0.1, )",
@@ -2497,7 +2491,7 @@
         }
       }
     },
-    ".NETCoreApp,Version=v5.0/win-x64": {
+    "net6.0/win-x64": {
       "Microsoft.Data.SqlClient": {
         "type": "Direct",
         "requested": "[2.0.1, )",

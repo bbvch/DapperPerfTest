@@ -16,6 +16,10 @@ namespace DapperPerfTest.Common
                     { HostDefaults.ContentRootKey, Directory.GetCurrentDirectory() }
                 }))
                 .ConfigureAppConfiguration(_ => _
+                    .AddInMemoryCollection(new Dictionary<string, string>
+                    {
+                        { "ConnectionStrings:Sql", Config.Connection }
+                    })
                     .AddEnvironmentVariables()
                     .AddCommandLine(args))
                 .ConfigureLogging(_ =>

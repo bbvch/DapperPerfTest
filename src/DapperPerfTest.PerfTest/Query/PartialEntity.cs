@@ -18,9 +18,37 @@ namespace DapperPerfTest.PerfTest.Query
         }
 
         [Benchmark]
-        public IReadOnlyCollection<EfProductInfo> EfCore()
+        public IReadOnlyCollection<EfProductInfo> EFCore5()
         {
-            return this.EfContext.Products
+            return this.EF5Context.Products
+                .Where(_ => !_.Discontinued && _.ReorderLevel > _.UnitsInStock + _.UnitsOnOrder)
+                .Select(_ => new EfProductInfo(_.ProductName)
+                {
+                    UnitsInStock = _.UnitsInStock,
+                    UnitsOnOrder = _.UnitsOnOrder,
+                    ReorderLevel = _.ReorderLevel
+                })
+                .ToList();
+        }
+
+        [Benchmark]
+        public IReadOnlyCollection<EfProductInfo> EFCore6()
+        {
+            return this.EF6Context.Products
+                .Where(_ => !_.Discontinued && _.ReorderLevel > _.UnitsInStock + _.UnitsOnOrder)
+                .Select(_ => new EfProductInfo(_.ProductName)
+                {
+                    UnitsInStock = _.UnitsInStock,
+                    UnitsOnOrder = _.UnitsOnOrder,
+                    ReorderLevel = _.ReorderLevel
+                })
+                .ToList();
+        }
+
+        [Benchmark]
+        public IReadOnlyCollection<EfProductInfo> EFCore6Compiled()
+        {
+            return this.EF6Context.Products
                 .Where(_ => !_.Discontinued && _.ReorderLevel > _.UnitsInStock + _.UnitsOnOrder)
                 .Select(_ => new EfProductInfo(_.ProductName)
                 {

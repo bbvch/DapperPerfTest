@@ -14,9 +14,21 @@ namespace DapperPerfTest.PerfTest.Query
         }
 
         [Benchmark]
-        public int EfCore()
+        public int EFCore5()
         {
-            return this.EfContext.IntResult.FromSqlRaw("SELECT 42 AS [value]").Single().Value;
+            return this.EF5Context.IntResult.FromSqlRaw("SELECT 42 AS [value]").Single().Value;
+        }
+
+        [Benchmark]
+        public int EFCore6()
+        {
+            return this.EF6Context.IntResult.FromSqlRaw("SELECT 42 AS [value]").Single().Value;
+        }
+
+        [Benchmark]
+        public int EFCore6Compiled()
+        {
+            return this.EF6Context.IntResult.FromSqlRaw("SELECT 42 AS [value]").Single().Value;
         }
     }
 }

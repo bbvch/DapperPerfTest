@@ -5,10 +5,12 @@ open System.IO
 open CsvHelper
 open DapperPerfTest.PerfTest
 open Plotly.NET
+open Plotly.NET.LayoutObjects
 open Plotly.NET.StyleParam
 
 type Benchmark() =
   member val Method = "" with get, set
+  member val Job = "" with get, set
   member val Type = "" with get, set
   member val ``Mean [ms]`` = 0m with get, set
   member val ``Allocated [B]`` = 0m with get, set
@@ -44,10 +46,15 @@ let main _ =
 
     let groupedLayout =
         let legend = Legend.init(XAnchor = XAnchorPosition.Center, X = 0.5, YAnchor = YAnchorPosition.Top, Orientation = Orientation.Horizontal)
-        Layout.init(Barmode = Barmode.Group, Font = Font.init(Family = FontFamily.Times_New_Roman), Legend = legend)
+        Layout.init(BarMode = BarMode.Group, Font = Font.init(Family = FontFamily.Times_New_Roman), Legend = legend)
 
     let show data title =
-        [ data "Dapper" "Dapper"; data "EfCore" "EF Core"; data "EfCoreCompiled" "EF Core (compiled)" ]
+        [
+//            data "Dapper" "Dapper"
+            data "EFCore5" "EF Core 5"
+            data "EFCore6" "EF Core 6"
+            data "EFCore6Compiled" "EF Core 6 (compiled)"
+        ]
         |> Chart.combine
         |> Chart.withYAxisStyle title
         |> Chart.withLayout groupedLayout
@@ -57,7 +64,7 @@ let main _ =
     let timeData = dataFor (fun r -> r.``Mean [ms]``)
     show timeData "Zeit [ms]"
 
-    let memoryData = dataFor (fun r -> r.``Allocated [B]`` / 1000m)
-    show memoryData "Alloziert [KB]"
+//    let memoryData = dataFor (fun r -> r.``Allocated [B]`` / 1000m)
+//    show memoryData "Alloziert [KB]"
 
     0
