@@ -11,6 +11,7 @@ type Benchmark() =
   member val Method = "" with get, set
   member val Type = "" with get, set
   member val ``Mean [ms]`` = 0m with get, set
+  member val ``Allocated [B]`` = 0m with get, set
 
 let benchmarksOrder =
     Program.BenchmarkTypes
@@ -34,21 +35,29 @@ let main _ =
         |> Seq.sortBy (fun r -> benchmarksOrder.Item r.Type)
         |> Seq.toList
 
-    let dataFor framework name =
+    let dataFor col framework name =
         let data =
             measurements
             |> List.filter (fun r -> r.Method = framework)
-            |> List.map (fun r -> (r.Type, r.``Mean [ms]``))
+            |> List.map (fun r -> (r.Type, col r))
         Chart.Column(data |> Seq.map fst, data |> Seq.map snd, name)
 
     let groupedLayout =
         let legend = Legend.init(XAnchor = XAnchorPosition.Center, X = 0.5, YAnchor = YAnchorPosition.Top, Orientation = Orientation.Horizontal)
         Layout.init(Barmode = Barmode.Group, Font = Font.init(Family = FontFamily.Times_New_Roman), Legend = legend)
 
-    [ dataFor "Dapper" "Dapper"; dataFor "EfCore" "EF Core"; dataFor "EfCoreCompiled" "EF Core (compiled)" ]
-    |> Chart.combine
-    |> Chart.withYAxisStyle "Zeit [ms]"
-    |> Chart.withLayout groupedLayout
-    |> Chart.withSize (768., 512.)
-    |> Chart.show
+    let show data title =
+        [ data "Dapper" "Dapper"; data "EfCore" "EF Core"; data "EfCoreCompiled" "EF Core (compiled)" ]
+        |> Chart.combine
+        |> Chart.withYAxisStyle title
+        |> Chart.withLayout groupedLayout
+        |> Chart.withSize (768., 512.)
+        |> Chart.show
+
+    let timeData = dataFor (fun r -> r.``Mean [ms]``)
+    show timeData "Zeit [ms]"
+
+    let memoryData = dataFor (fun r -> r.``Allocated [B]`` / 1000m)
+    show memoryData "Alloziert [KB]"
+
     0

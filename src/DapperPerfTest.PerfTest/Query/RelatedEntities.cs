@@ -59,6 +59,38 @@ namespace DapperPerfTest.PerfTest.Query
         }
 
         [Benchmark]
+        public IReadOnlyCollection<EndangeredCustomer> DapperFromEfContext()
+        {
+            const string Sql = @"
+                SELECT c.CustomerId, c.ContactName, c.Phone, o.OrderId, od.UnitPrice * od.Quantity AS Total FROM
+                Customers c JOIN
+                Orders o ON c.CustomerID = o.CustomerID JOIN
+                [Order Details] od ON o.OrderID = od.OrderId
+                WHERE od.ProductId = @prodID";
+            var customers = this.EfContext.Database.GetDbConnection()
+                .Query<dynamic, dynamic, EndangeredCustomer>(
+                    Sql,
+                    (customer, order) => new EndangeredCustomer
+                    {
+                        CustomerId = customer.CustomerId,
+                        Name = customer.ContactName,
+                        Phone = customer.Phone,
+                        OrderIds = new int[] { order.OrderId },
+                        TotalAmount = order.Total
+                    },
+                    new { prodId = ProductId },
+                    splitOn: "OrderId")
+                .GroupBy(_ => _.CustomerId).Select(endangeredCustomers =>
+                {
+                    var customer = endangeredCustomers.First();
+                    customer.OrderIds = endangeredCustomers.SelectMany(_ => _.OrderIds!).ToList();
+                    customer.TotalAmount = endangeredCustomers.Select(_ => _.TotalAmount).Sum();
+                    return customer;
+                }).ToList();
+            return customers;
+        }
+
+        [Benchmark]
         public IReadOnlyCollection<EndangeredCustomer> EfCore()
         {
             var customerQuery =
